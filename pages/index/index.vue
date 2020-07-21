@@ -258,13 +258,25 @@
 				};
 				// console.log(code);
 				// var res = await this.$request.get('http://127.0.0.1:5000/getUser',data);
-				var res = await this.$request.get("https://api.weixin.qq.com/sns/jscode2session?appid=wxddfdc0207f9685cc&secret=46c39d9ef7186ded35c917314b298070&js_code=" + code + "&grant_type=authorization_code",);
-				console.log(res);
-				var openid = res.data.openid;
-				uni.setStorage({
-					key:'openid',
-					data:res.data.openid
+				// var res = await this.$request.get("https://api.weixin.qq.com/sns/jscode2session?appid=wxddfdc0207f9685cc&secret=46c39d9ef7186ded35c917314b298070&js_code=" + code + "&grant_type=authorization_code",);
+				uni.request({
+					url:"https://api.weixin.qq.com/sns/jscode2session?appid=wxddfdc0207f9685cc&secret=46c39d9ef7186ded35c917314b298070&js_code=" + code + "&grant_type=authorization_code",
+					method: "GET",
+					dataType: "json",
+					success: (res) => {
+						console.log(res);
+						var openid = res.data.openid;
+						uni.setStorage({
+							key:'openid',
+							data:res.data.openid
+						})
+					},
+					fail: (e) => {
+						console.log(e)
+					}
 				})
+				
+				
 			},
 			
 			

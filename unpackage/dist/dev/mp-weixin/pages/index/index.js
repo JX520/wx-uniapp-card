@@ -380,7 +380,7 @@ var _default =
 
     },
 
-    getOpenId: function getOpenId(code, encryptedData, iv) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var data, res, openid;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    getOpenId: function getOpenId(code, encryptedData, iv) {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 data = {
                   // appid:"wxddfdc0207f9685cc",
                   // secret:"46c39d9ef7186ded35c917314b298070",
@@ -391,12 +391,24 @@ var _default =
                 };
                 // console.log(code);
                 // var res = await this.$request.get('http://127.0.0.1:5000/getUser',data);
-                _context.next = 3;return _this4.$request.get("https://api.weixin.qq.com/sns/jscode2session?appid=wxddfdc0207f9685cc&secret=46c39d9ef7186ded35c917314b298070&js_code=" + code + "&grant_type=authorization_code");case 3:res = _context.sent;
-                console.log(res);
-                openid = res.data.openid;
-                uni.setStorage({
-                  key: 'openid',
-                  data: res.data.openid });case 7:case "end":return _context.stop();}}}, _callee);}))();
+                // var res = await this.$request.get("https://api.weixin.qq.com/sns/jscode2session?appid=wxddfdc0207f9685cc&secret=46c39d9ef7186ded35c917314b298070&js_code=" + code + "&grant_type=authorization_code",);
+                uni.request({
+                  url: "https://api.weixin.qq.com/sns/jscode2session?appid=wxddfdc0207f9685cc&secret=46c39d9ef7186ded35c917314b298070&js_code=" + code + "&grant_type=authorization_code",
+                  method: "GET",
+                  dataType: "json",
+                  success: function success(res) {
+                    console.log(res);
+                    var openid = res.data.openid;
+                    uni.setStorage({
+                      key: 'openid',
+                      data: res.data.openid });
+
+                  },
+                  fail: function fail(e) {
+                    console.log(e);
+                  } });case 2:case "end":return _context.stop();}}}, _callee);}))();
+
+
 
     },
 
@@ -422,7 +434,7 @@ var _default =
         } });
 
     },
-    saveImg: function saveImg() {var _this5 = this;
+    saveImg: function saveImg() {var _this4 = this;
       uni.getSetting({
         success: function success(res) {
           //未授权 先授权 然后保存
@@ -430,12 +442,12 @@ var _default =
             uni.authorize({
               scope: 'scope.writePhotosAlbum',
               success: function success(re) {
-                _this5.saveToBlum();
+                _this4.saveToBlum();
               } });
 
           } else {
             //已授 直接调用保存到相册方法
-            _this5.saveToBlum();
+            _this4.saveToBlum();
           }
         } });
 

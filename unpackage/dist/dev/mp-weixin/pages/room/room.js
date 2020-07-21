@@ -273,7 +273,7 @@ var _default =
 
     //请求数据
     shareReq: function shareReq() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  _this.$request.get('http://127.0.0.1:5000/share'));case 2:res = _context.sent;
+                  _this.$request.get('/share'));case 2:res = _context.sent;
                 console.log(res);
                 _this.companyList = res.data;case 5:case "end":return _context.stop();}}}, _callee);}))();
     },
@@ -293,7 +293,7 @@ var _default =
                 data = {
                   'uid': uid };_context2.next = 3;return (
 
-                  _this2.$request.get('http://127.0.0.1:5000/share?uid=' + uid));case 3:res = _context2.sent;
+                  _this2.$request.get('/share?uid=' + uid));case 3:res = _context2.sent;
                 _this2.talks = res.data.review;case 5:case "end":return _context2.stop();}}}, _callee2);}))();
     },
 

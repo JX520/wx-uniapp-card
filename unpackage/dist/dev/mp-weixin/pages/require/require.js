@@ -342,7 +342,7 @@ var _default =
                   publishTime: _this4.$moment(new Date().getTime()).format('YYYY-MM-DD HH:mm:ss') };_context2.next = 3;return (
 
 
-                  _this4.$request.post('http://127.0.0.1:5000/require', data));case 3:res = _context2.sent;
+                  _this4.$request.post('/require', data));case 3:res = _context2.sent;
                 // console.log(res);
                 if (res.code == 0) {
                   uni.showToast({

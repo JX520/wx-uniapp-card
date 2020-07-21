@@ -209,7 +209,7 @@
 					publishTime:this.$moment(new Date().getTime()).format('YYYY-MM-DD HH:mm:ss')
 				};
 				
-				var res = await this.$request.post('http://127.0.0.1:5000/require',data);
+				var res = await this.$request.post('/require',data);
 				// console.log(res);
 				if(res.code == 0){
 					uni.showToast({

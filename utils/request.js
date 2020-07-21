@@ -1,4 +1,4 @@
-const commonUrl = "https://www.xxxxxx/"; //公共路径 
+const commonUrl = "http://127.0.0.1:6000"; //公共路径 
 
 // post请求封装
 function postRequest(url, data) {
@@ -6,8 +6,8 @@ function postRequest(url, data) {
         var that = this;
         var postData = data;
         uni.request({
-            // url: commonUrl + url,
-			url:url,
+            url: commonUrl + url,
+			// url:url,
             data: postData,
             method: "POST",
             header: {
@@ -40,8 +40,8 @@ function getRequest(url, data) {
         var that = this;
         var postData = data;
         uni.request({
-            // url: commonUrl + url,
-			url:url,
+            url: commonUrl + url,
+			// url:url,
             data: postData,
             method: "GET",
             dataType: "json",

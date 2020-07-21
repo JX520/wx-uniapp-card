@@ -140,7 +140,7 @@
 
 			//请求数据
 			async shareReq() {
-				var res = await this.$request.get('http://127.0.0.1:5000/share');
+				var res = await this.$request.get('/share');
 				console.log(res);
 				this.companyList = res.data;
 			},
@@ -160,7 +160,7 @@
 				var data = {
 					'uid': uid
 				};
-				var res = await this.$request.get('http://127.0.0.1:5000/share?uid=' + uid);
+				var res = await this.$request.get('/share?uid=' + uid);
 				this.talks = res.data.review;
 			},
 

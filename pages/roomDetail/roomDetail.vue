@@ -116,7 +116,7 @@
 				 var data = {
 					 'uid':uid
 				 };
-				 var res = await this.$request.get('http://127.0.0.1:5000/share?uid=' + uid);
+				 var res = await this.$request.get('/share?uid=' + uid);
 				 this.detail = res.data;
 				 console.log(res);
 				 this.review = res.data.review.reverse();
@@ -164,7 +164,7 @@
 					'content':this.text,
 					'publishTime':this.$moment(new Date().getTime()).format('YYYY-MM-DD HH:mm:ss')
 				};
-				var res = await this.$request.get('http://127.0.0.1:5000/share',data);
+				var res = await this.$request.get('/share',data);
 				 // console.log(res);
 				this.detailReq(uid);
 				

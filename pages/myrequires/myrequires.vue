@@ -45,7 +45,7 @@
 					'openid':openid
 				}
 				console.log(this.openid);
-				var res =await this.$request.post('http://127.0.0.1:5000/require',data);
+				var res =await this.$request.post('/require',data);
 				console.log(res.result);
 				 this.requireList = res.result;
 				if(this.requireList.length > 0){

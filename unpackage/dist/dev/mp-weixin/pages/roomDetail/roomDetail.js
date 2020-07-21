@@ -249,7 +249,7 @@ var _default =
                 data = {
                   'uid': uid };_context2.next = 3;return (
 
-                  _this2.$request.get('http://127.0.0.1:5000/share?uid=' + uid));case 3:res = _context2.sent;
+                  _this2.$request.get('/share?uid=' + uid));case 3:res = _context2.sent;
                 _this2.detail = res.data;
                 console.log(res);
                 _this2.review = res.data.review.reverse();
@@ -297,7 +297,7 @@ var _default =
                   'content': _this4.text,
                   'publishTime': _this4.$moment(new Date().getTime()).format('YYYY-MM-DD HH:mm:ss') };_context3.next = 3;return (
 
-                  _this4.$request.get('http://127.0.0.1:5000/share', data));case 3:res = _context3.sent;
+                  _this4.$request.get('/share', data));case 3:res = _context3.sent;
                 // console.log(res);
                 _this4.detailReq(uid);case 5:case "end":return _context3.stop();}}}, _callee3);}))();
 

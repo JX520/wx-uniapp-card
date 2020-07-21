@@ -178,7 +178,7 @@ var _default =
                   'openid': openid };
 
                 console.log(_this.openid);_context.next = 4;return (
-                  _this.$request.post('http://127.0.0.1:5000/require', data));case 4:res = _context.sent;
+                  _this.$request.post('/require', data));case 4:res = _context.sent;
                 console.log(res.result);
                 _this.requireList = res.result;
                 if (_this.requireList.length > 0) {
