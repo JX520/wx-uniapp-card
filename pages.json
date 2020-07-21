@@ -1,0 +1,106 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom"
+			}
+		},{
+		    "path" : "pages/user/user",
+		    "style" : {
+				"navigationBarTitleText": "个人中心",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#ffaa00",
+				"backgroundColor": "#F8F8F8"
+			}
+		},{
+			"path": "pages/room/room",
+			"style": {
+				"navigationBarTitleText": "动态"
+			}
+		},{
+			"path": "pages/require/require",
+			"style": {
+				"navigationBarTitleText": "需求"
+			}
+		},
+		{
+			"path": "pages/company/company",
+			"style": {
+				"navigationBarTitleText": "公司"
+			}
+		},  {
+			"path": "pages/service/service",
+			"style": {
+				"navigationBarTitleText": "服务"
+			}
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情介绍"
+			}
+		}
+        ,{
+            "path" : "pages/roomDetail/roomDetail",
+            "style" : {
+				"navigationBarTitleText": "动态详情"
+			}
+        }
+        
+        ,{
+            "path" : "pages/myrequires/myrequires",
+            "style" : {
+				"navigationBarTitleText": "我的需求"
+			}
+        }
+        ,{
+            "path" : "pages/mylikes/mylikes",
+            "style" : {
+				"navigationBarTitleText": "我的收藏"
+			}
+        }
+        ,{
+            "path" : "pages/set/set",
+            "style" : {
+				"navigationBarTitleText": "设置"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+
+	},
+	"tabBar": {
+		"list": [{
+			"text": "首页",
+			"pagePath": "pages/index/index",
+			"iconPath": "static/index.png",
+			"selectedIconPath": "./static/selectIndex.png"
+		}, {
+			"text": "企业",
+			"pagePath": "pages/company/company",
+			"iconPath": "static/company.png",
+			"selectedIconPath": "./static/selectCompany.png"
+		}, {
+			"text": "动态",
+			"pagePath": "pages/room/room",
+			"iconPath": "static/room.png",
+			"selectedIconPath": "./static/selectRoom.png"
+		}, {
+			"text": "需求",
+			"pagePath": "pages/require/require",
+			"iconPath": "static/need.png",
+			"selectedIconPath": "./static/selectNeed.png"
+		}, {
+			"text": "服务",
+			"pagePath": "pages/service/service",
+			"iconPath": "static/service.png",
+			"selectedIconPath": "./static/selectService.png"
+		}]
+	}
+
+}
