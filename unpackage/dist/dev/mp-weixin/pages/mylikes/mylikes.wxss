@@ -1,0 +1,26 @@
+
+.out.data-v-53c57e2e{
+	width: 100%;
+	height: auto;
+	padding: 20rpx;
+	box-sizing: border-box;
+	/* border:1rpx solid #007AFF; */
+	background-color: white;
+}
+.image image.data-v-53c57e2e{
+	height: 150rpx;
+}
+.cu-card.case .image.data-v-53c57e2e{
+	height: 180rpx;
+	margin-top:20rpx
+}
+.cu-list.menu-avatar>.cu-item.data-v-53c57e2e{
+	height: 100rpx;
+}
+.cu-bar.data-v-53c57e2e{
+	height: 80rpx;
+}
+.text-cut.data-v-53c57e2e{
+	font-size: 32rpx;
+}
+

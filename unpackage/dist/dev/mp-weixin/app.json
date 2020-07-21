@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/room/room",
+    "pages/require/require",
+    "pages/company/company",
+    "pages/service/service",
+    "pages/detail/detail",
+    "pages/roomDetail/roomDetail",
+    "pages/myrequires/myrequires",
+    "pages/mylikes/mylikes",
+    "pages/set/set"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/index.png",
+        "selectedIconPath": "./static/selectIndex.png"
+      },
+      {
+        "text": "企业",
+        "pagePath": "pages/company/company",
+        "iconPath": "static/company.png",
+        "selectedIconPath": "./static/selectCompany.png"
+      },
+      {
+        "text": "动态",
+        "pagePath": "pages/room/room",
+        "iconPath": "static/room.png",
+        "selectedIconPath": "./static/selectRoom.png"
+      },
+      {
+        "text": "需求",
+        "pagePath": "pages/require/require",
+        "iconPath": "static/need.png",
+        "selectedIconPath": "./static/selectNeed.png"
+      },
+      {
+        "text": "服务",
+        "pagePath": "pages/service/service",
+        "iconPath": "static/service.png",
+        "selectedIconPath": "./static/selectService.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap21.json"
+}

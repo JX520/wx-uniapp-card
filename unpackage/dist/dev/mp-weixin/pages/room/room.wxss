@@ -1,0 +1,286 @@
+
+.tab_contain {
+	width: 100%;
+	height: 70rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	box-sizing: border-box;
+	border-bottom: 1rpx solid #eee;
+	position: fixed;
+	background-color: white;
+	z-index: 10;
+}
+.tab_one {
+	width: 50%;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	box-sizing: border-box;
+}
+.tab_one view {
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	font-size: 30rpx;
+	letter-spacing: 2rpx;
+}
+.tab_on {
+	font-size: 32rpx;
+	font-weight: 600;
+	border-bottom: 4rpx solid #6699CC;
+}
+.company,
+.one {
+	width: 96%;
+	height: auto;
+	/* border: 1rpx solid #007AFF; */
+	padding: 100rpx 15rpx 0 15rpx;
+	overflow-y: auto;
+}
+.company-list {
+	width: 94%;
+	height: 500rpx;
+	padding: 20rpx;
+	border: 1rpx solid red;
+}
+.company-list-header {
+	width: 100%;
+	height: 100rpx;
+	/* 		border: 1rpx solid #007AFF; */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+}
+.company-list-header image {
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 10rpx;
+	margin-right: 20rpx;
+}
+.company-list-header-title ._h5 {
+	font-size: 30rpx;
+}
+.company-list-header-title text {
+	font-size: 24rpx;
+	color: #949396;
+}
+.company-list-body {
+	width: 100%;
+	height: 320rpx;
+	border: 1rpx solid whitesmoke;
+	border-radius: 10rpx;
+}
+.company-list-body image {
+	width: 100%;
+	height: 100%;
+}
+.company-list-body-title {
+	width: 100%;
+	height: 30rpx;
+	line-height: 30rpx;
+	text-align: center;
+	/* border: 1rpx solid #007AFF; */
+}
+.company-list-body-title text {
+	font-size: 30rpx;
+	color: #333333;
+	overflow: hidden;
+}
+.company-list-footer {
+	width: 98%;
+	height: 50rpx;
+	/* 		border: 1rpx solid red; */
+	padding: 10rpx 10rpx 0 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+}
+.company-list-footer-body {
+	width: 60rpx;
+	height: 40rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	/* border: 1rpx solid #007AFF; */
+	margin-right: 10rpx;
+}
+.company-list-footer-body image {
+	width: 35rpx;
+	height: 35rpx;
+}
+.company-list-footer-body text {
+	font-size: 26rpx;
+	color: #949396;
+}
+.center {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.nice {
+	width: 30rpx;
+	height: 30rpx;
+}
+
+/* 评论层 */
+.talks-layer {
+	position: fixed;
+	bottom: 0;
+	height: 0;
+	width: 100%;
+	overflow: hidden;
+	z-index: 99;
+	/* background-color: blue; */
+}
+.layer-white-space {
+	height: 100%;
+	width: 95%;
+	background-color: white;
+	opacity: .1;
+	/* background-color: green; */
+}
+.talks {
+	position: absolute;
+	height: 700rpx;
+	width: 95%;
+	bottom: 10rpx;
+	background-color: #f1f1f1;
+	border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
+	border: 1rpx solid #CCCCCC;
+	/* background-color: red; */
+}
+.talk-header {
+	width: 100%;
+	height: 70rpx;
+	padding-top: 30rpx;
+	text-align: center;
+}
+.talk-body {
+	height: 500rpx;
+}
+.talk-footer {
+	position: absolute;
+	bottom: 0rpx;
+	width: 100%;
+	height: 100rpx;
+	background-color: #f1f1f1;
+}
+
+/* 顶部元素  */
+.talk-count {
+	font-size: 0.8rem;
+	height: 40rpx;
+	color: #646566;
+}
+.talk-close {
+	position: absolute;
+	top: 40rpx;
+	right: 40rpx;
+	width: 40rpx;
+	height: 40rpx;
+}
+
+/* 中部元素  */
+.talk-item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	        align-items: flex-start;
+	width: 100%;
+	color: #343434;
+	font-size: 30rpx;
+}
+.talk-item-left {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	margin: 20rpx 30rpx;
+}
+.talk-item-face {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+.talk-item-right {
+	width: 100%;
+	/* 	  border-bottom: solid 1rpx #6a6869; */
+	margin-right: 30rpx;
+	margin-bottom: 30rpx;
+}
+.talk-item-nickname {
+	font-size: 0.7rem;
+	color: #aaa8a9;
+	margin-top: 20rpx;
+	margin-bottom: 10rpx;
+}
+.talk-item-content {
+	display: block;
+	margin-right: 30rpx;
+	width: 100%;
+	white-space: pre-line;
+}
+.talk-item-time {
+	font-size: 22rpx;
+	color: #6a6869;
+	margin-bottom: 20rpx;
+}
+
+/* 底部元素  */
+.talk-input {
+	width: 100%;
+	padding: 20rpx 40rpx;
+	color: white;
+	border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
+}
+
