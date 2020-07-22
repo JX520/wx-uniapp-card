@@ -1,16 +1,20 @@
 {
   "pages": [
+    "pages/company/company",
     "pages/index/index",
     "pages/user/user",
     "pages/room/room",
     "pages/require/require",
-    "pages/company/company",
     "pages/service/service",
     "pages/detail/detail",
     "pages/roomDetail/roomDetail",
     "pages/myrequires/myrequires",
     "pages/mylikes/mylikes",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/platform/companyIntro/companyIntro",
+    "pages/platform/shop/shop",
+    "pages/platform/need/need",
+    "pages/platform/visit/visit"
   ],
   "subPackages": [],
   "window": {

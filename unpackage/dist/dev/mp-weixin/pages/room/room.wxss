@@ -46,7 +46,7 @@
 }
 .company,
 .one {
-	width: 96%;
+	/* width: 96%; */
 	height: auto;
 	/* border: 1rpx solid #007AFF; */
 	padding: 100rpx 15rpx 0 15rpx;

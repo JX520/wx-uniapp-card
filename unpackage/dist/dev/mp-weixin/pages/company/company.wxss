@@ -1,7 +1,27 @@
 
+.menu{
+	width: 100%;
+	height: 150rpx;
+	position: fixed;
+	top: 0;
+	background-color: white;
+	z-index: 10;
+	/* border: 1px solid red; */
+}
+.menu-1{
+	width: 94%;
+}
+.menu-1-1{
+	font-size: 22rpx;
+}
+.menu-1-1 image{
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 10rpx;
+}
 .tab_contain {
     width: 100%;
-    height: 80rpx;
+    height: 60rpx;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -11,11 +31,12 @@
     box-sizing: border-box;
     border-bottom: 1rpx solid #eee;
     position: fixed;
+	top: 140rpx;
     background-color: white;
 	z-index: 10;
 }
 .tab_one {
-      width: 25%;
+      width: 50%;
       height: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -36,54 +57,24 @@
       -webkit-box-align: center;
       -webkit-align-items: center;
               align-items: center;
-      font-size: 30rpx;
+      font-size: 26rpx;
       letter-spacing: 2rpx;
 }
 .tab_on {
-      font-size: 32rpx;
+      font-size: 28rpx;
       font-weight: 600;
       border-bottom: 4rpx solid #6699CC;
 }
-.intro{
-	width: 96%;
-	height: 1100rpx;
-
-	padding: 100rpx 15rpx 0 15rpx;
-	overflow-y: auto;
-}
-.intro image{
-	width: 100%;
-	height: 300rpx;
-}
-.intro ._h3{
-	color: #6495ED;
-	text-align: center;
-	margin-bottom: 20rpx;
-}
-.intro text{
-	color: #808080;
-	font-size: 26rpx;
-	margin-bottom: 20rpx;
-	display: block;
-	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	letter-spacing: 2rpx;
-}
-.able{
-	width: 95%;
-	height: 1000rpx;
-	/* border: 1rpx solid #007AFF; */
-	padding: 100rpx 15rpx 0 15rpx;
-	overflow-y: auto;
-}
 .product{
-	width: 95%;
-	height: 1000rpx;
+	/* width: 95%; */
+	width: 100%;
+	/* height: 2000rpx; */
 	/* border: 1rpx solid red; */
-	padding: 100rpx 15rpx 0 15rpx;
+	padding: 230rpx 15rpx 0 15rpx;
 	overflow-y: auto;
 }
 .product-list{
-	width: 97%;
+	/* width: 97%; */
 	height: auto;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -127,10 +118,11 @@
 	color: #999999;
 }
 .cases{
-	width: 95%;
-	height: 1000rpx;
+	/* width: 95%; */
+	width: 100%;
+	/* height: 1000rpx; */
 	/* border: 1rpx solid #4CD964; */
-	padding: 100rpx 15rpx 0 15rpx;
+	padding: 230rpx 15rpx 0 15rpx;
 	overflow-y: auto;
 }
 

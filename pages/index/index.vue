@@ -20,19 +20,20 @@
 			</view>
 			<view class="card">
 				<view class="card-logo">
-					<image src="../../static/logo.png"></image>
-					<text>合肥软界信息科技有限公司</text>
-					<button class="cu-btn round bg-yellow sm share" open-type="share">
-						分享
-					</button>
+					<image :src="platform.cLogo"></image>
+					<text>{{platform.cName}}</text>
+					<view class="follow">
+					<u-button plain type="warning" size="mini" shape="circle" open-type='share'>分享</u-button>
+					<u-button plain type="success" size="mini" shape="circle" >收藏</u-button>
+					</view>
 				</view>
 				
 				<view class="card-body">
 					<view class="card-body-msg">
-						<image src="../../static/logo.png"></image>
-						<text style="font-size: 32rpx;color: white;">张总</text>
-						<text>董事长</text>
-						<text>18888888888</text>
+						<image :src="platform.clogo"></image>
+						<text style="font-size: 32rpx;color: white;">{{platform.cname}}</text>
+						<text>{{platform.cposition}}</text>
+						<text>{{platform.cphone}}</text>
 					</view>
 					<view class="card-body-intro">
 						<view class="card-body-title">
@@ -40,14 +41,13 @@
 						</view>
 						<view class="card-body-product">
 							<ul>
-								<li>公众号.小程序.APP</li>
-								<li>企业网站.后台管理系统</li>
-								<li>基于物联网的云数据监控平台</li>
-								<li>智能制造.智慧城市系列</li>
-								<li>工控上位机软件系统</li>
+								<li v-for='(item,index) in platform.cProduct' :key='index'>{{item}}</li>
 							</ul>
 						</view>
 					</view>
+				</view>
+				<view class="card-footer" @click="copyText($event)" :data-text='platform.cAddress'>
+					{{platform.cAddress}}
 				</view>
 			</view>
 
@@ -57,12 +57,23 @@
 						<text>公司简介:</text>
 					</view>
 					<view class="intro-company-msg">
-						<text>合肥软界信息科技有限公司</text>
+						<text>{{platform.cBrief}}{{platform.cAddress}}{{platform.cAddress}}{{platform.cAddress}}{{platform.cAddress}}{{platform.cAddress}}</text>
 						<view class="company-more">
 							<navigator url="/pages/company/company" open-type="switchTab" hover-class="other-navigator-hover">
-								<text>--了解更多</text>
+								<text>了解更多</text>
 							</navigator>
 						</view>
+					</view>
+					<view class="intro-company-footer">
+						<view class="">
+							<text @click="copyText($event)" :data-text='platform.cPhone'>联系电话：{{platform.cPhone}}</text>
+							<text @click="copyText($event)" :data-text='platform.cMail'>联系邮箱：{{platform.cMail}}</text>
+						</view>
+						<view class="">
+							<text @click="copyText($event)" :data-text='platform.cPublic'>公众号：{{platform.cPublic}}</text>
+							<text @click="copyText($event)" :data-text='platform.cLink'>官网：{{platform.cLink}}</text>
+						</view>
+						
 					</view>
 
 				</view>
@@ -71,59 +82,56 @@
 						<text>个人简介:</text>
 					</view>
 					<view class="intro-myself-msg">
-						<view class="intro-people">
-							<image src="../../static/logo.png"></image>
+						<!-- <view class="intro-people">
+							<image :src="platform.clogo"></image>
+						</view> -->
+						<text style="font-size: 34rpx;color: black;">{{platform.cname}}</text>
+						<view class="intro-company-msg">
+							<text>{{platform.cAddress}}{{platform.cAddress}}{{platform.cAddress}}{{platform.cAddress}}</text>
 						</view>
-						<view class="intro-people-msg">
-
-							<text style="font-size: 34rpx;color: black;">张总</text>
-
-
-							<view class="people-1">
-								<image src="../../static/phone.png"></image>
-								<text>
-									189 1960 2840
+						<view class="intro-company-footer">
+							<view class="">
+								<text @click="copyText($event)" :data-text='platform.cphone'>
+									联系电话： {{platform.cphone}}
+								</text>
+								<text @click="copyText($event)" :data-text='platform.cmail'>
+									联系邮箱： {{platform.cmail}}
 								</text>
 							</view>
-							<view class="people-1">
-								<image src="../../static/email.png"></image>
-								<text>
-									yfzhang@ranjoin.cn
+							<view class="">
+								<text @click="copyText($event)" :data-text='platform.cPublic'>
+									联系微信： {{platform.cPublic}}
 								</text>
 							</view>
-							<view class="people-1">
-								<image src="../../static/address.png"></image>
-								<text>
-									安徽省合肥市蜀山区仰桥路与雪霁路交叉口西150米仪宇孵化器6楼610
-								</text>
-							</view>
-							<view class="people-more">
-								<text @click="showShadow">--了解更多</text>
-							</view>
+							
 						</view>
-
+						<view class="follow">
+							<u-button plain type="success" size="mini" shape="circle">关注</u-button>
+						</view>
+						
+						
 					</view>
 				</view>
 			</view>
-			<view id="people" class="people" v-if="shadow">
-				<!-- <view id="people" class="people" v-if="shadow" :animation = "animateShow"> -->
+			<!-- <view id="people" class="people" v-if="shadow">
+				 <view id="people" class="people" v-if="shadow" :animation = "animateShow"> 
 				<view class="p-intro">
 					<text>工作经历</text>
 					<view class="p-intro-work">
-						<text>从事于软件开发20年....</text>
+						<text>{{platform.cwork}}</text>
 					</view>
 				</view>
 				<view class="p-intro">
 					<text>个人成就</text>
 					<view class="p-intro-work">
-						<text>从事于软件开发20年....</text>
+						<text>{{platform.creward}}</text>
 					</view>
 				</view>
 				<view class="p-wx" v-for="(item , index) in wxImg" :key='index'>
-					<image   @longtap="saveImg()" :src="item"  data-src="item" mode=""></image>
+					<image   @longtap="saveImg()" :src="item"  data-src="item" mode="" title='长按保存到相册'></image>
 					<text>添加微信</text>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
@@ -138,15 +146,15 @@
 				navH: 0,
 				clearH:0,
 				userInfo:{},
-				wxImg:[
-					'../../static/code.jpg',
-				],
+				platform:'',
+				wxImg:[],
 				wx:'../../static/code.jpg',
 			}
 		},
 		onLoad() {
 			this.navHeight();
 			this.getUser();
+			this.getPlatform();
 		},
 		onShow() {
 			// 初始化一个动画
@@ -247,6 +255,7 @@
 				})
 			},
 			
+			//获取openid
 			async getOpenId(code,encryptedData,iv){
 				var data = {
 					// appid:"wxddfdc0207f9685cc",
@@ -279,14 +288,23 @@
 				
 			},
 			
+			//获取平台信息
+			async getPlatform(){
+				var res = await this.$request.get('/platform',);
+				// console.log(res);
+				this.platform = res.data.result[0];
+				this.wxImg.push(this.platform.cwx);
+
+			},
 			
-			//
+			//分享
 			onShareAppMessage() {
 				return {
 					title: '合肥软界信息科技有限公司',
 					path: '/pages/index/index',
 				}
 			},
+			
 			
 			preImg(){
 				 // var src = e.currenttarget.dataset.src;
@@ -301,6 +319,8 @@
 					}
 				})
 			},
+			
+			//保存照片
 			saveImg () {
 			    uni.getSetting({
 			      success:(res)=> {
@@ -329,13 +349,31 @@
 				          filePath: path,
 				          success:(result)=> {
 				            wx.showToast({
+								icon: 'success',
 				              title: '保存成功',
-				              icon: 'success'
+				              
 				            })
 				          },
 				        })
 				      }
-				    })
+				})
+			},
+			copyText(e){
+				uni.setClipboardData({
+					data:e.currentTarget.dataset.text,
+					success: (res) => {
+						wx.getClipboardData({
+							success:(res)=>{
+								wx.showToast({
+									icon:'none',
+									title:'复制成功',
+									
+								});
+								console.log(res)
+							}
+						})
+					}
+				})
 			}
 		},
 	}
@@ -343,7 +381,7 @@
 
 <style>
 	body {
-		overflow: hidden;
+		overflow-x: hidden;
 	}
 	.clear{
 		width: 100%;
@@ -362,15 +400,15 @@
 
 	.shadow-content {
 		width: 99%;
-		height: 1100rpx;
+		/* height: 1100rpx; */
 		/* border: 1rpx solid red; */
 		padding: 15rpx;
 		background-color: #F2f2f2;
 	}
 
 	.card {
-		width: 94%;
-		height: 360rpx;
+		/* width: 94%; */
+		/* height: 360rpx; */
 
 		padding: 10rpx;
 		border-radius: 20rpx;
@@ -391,6 +429,7 @@
 	.card-logo image {
 		width: 60rpx;
 		height: 60rpx;
+		margin-right: 20rpx;
 	}
 
 	.card-logo text {
@@ -406,7 +445,7 @@
 	}
 	.card-body {
 		width: 100%;
-		height: 200rpx;
+		/* height: 200rpx; */
 		padding-top: 20rpx;
 		display: flex;
 		flex-direction: row;
@@ -460,10 +499,16 @@
 		letter-spacing: 2rpx;
 
 	}
-
+	
+	.card-footer{
+		margin-top: 20rpx;
+		text-align: center;
+		font-size: 20rpx;
+		color: #999999;
+	}
 	.intro {
-		width: 94%;
-		height: 720rpx;
+		/* width: 94%; */
+		/* height: 720rpx; */
 
 		border-radius: 10rpx;
 		background-color: white;
@@ -473,13 +518,13 @@
 
 	.intro-company {
 		width: 95%;
-		height: 320rpx;
+		/* height: 320rpx; */
 		padding: 10rpx;
 
 	}
 
 	.intro-company-title {
-		width: 22%;
+		/* width: 22%; */
 		height: 50rpx;
 		line-height: 40rpx;
 		border-bottom: 2rpx solid #6495ED;
@@ -503,11 +548,25 @@
 		position: relative;
 
 	}
+	.follow{
+		position: absolute;
+		top: 10rpx;
+		right: 10rpx;
+		display: flex;
+		flex-direction: column;
+	}
 
 	.intro-company-msg text {
 		font-size: 24rpx;
 		color: gray;
 		letter-spacing: 5rpx;
+		overflow: hidden;
+		word-break: break-all;
+		box-sizing: border-box;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 7;
+		-webkit-box-orient: vertical;
 	}
 
 	.company-more text {
@@ -517,10 +576,21 @@
 		bottom: 5rpx;
 		right: 5rpx;
 	}
-
+	.intro-company-footer{
+		font-size: 20rpx;
+		color: gray;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.intro-company-footer text{
+		margin-right: 20rpx;
+	}
+	
 	.intro-myself {
 		width: 95%;
-		height: 340rpx;
+		/* height: 340rpx; */
 		padding: 10rpx;
 		position: relative;
 
@@ -528,13 +598,14 @@
 
 	.intro-myself-msg {
 		width: 100%;
-		height: 260rpx;
+		/* height: 260rpx; */
 		/* 		border: 1rpx solid #007AFF; */
-		margin-top: 20rpx;
+		/* margin-top: 20rpx; */
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 	}
 
 	.intro-people {

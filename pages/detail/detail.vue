@@ -31,25 +31,35 @@
 					
 				],
 				detailData:"",
+				platform:'',
 			}
 		},
 		onLoad(e) {
 			// console.log(e);
 			this.uid = e.uid;
-			this.detailReq(e.uid);
+			this.getPlatform(e.uid);
 		},
 		onShow() {
-			this.detailReq(this.uid);
+			this.getPlatform(this.uid);
 		},
 		methods: {
 			async detailReq(id){
 				var data = {
 					uid:id,
 				};
-				var res = await this.$request.get('http://127.0.0.1:5000/product',data);
+				var res = await this.$request.get('/product',data);
 				this.detailData = res.data;
 				console.log(res);
 				this.swiper = res.data.swiper;
+			},
+			async getPlatform(){
+				var res = await this.$request.get('/platform',);
+				// console.log(res);
+				this.platform = res.data.result[0];	
+				this.detailData =  this.platform.cProducts.find((item)=>{
+					return item['uid'] == this.uid
+				});
+				this.swiper =this.detailData.swiper;
 			},
 		}
 	}

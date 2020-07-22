@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
-    "moment": "^2.27.0"
+    "moment": "^2.27.0",
+    "sass-loader": "^8.0.2",
+    "uview-ui": "file:uview-ui"
   }
 }

@@ -5,6 +5,8 @@ import moment from 'moment'
 // import cuCustom from 'colorui/components/cu-custom.vue'
 
 moment.locale('zh-cn');
+import uView from 'uview-ui';
+Vue.use(uView);
 Vue.config.productionTip = false
 // Vue.component('cu-custom',cuCustom)
 Vue.prototype.$request = request

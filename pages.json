@@ -1,6 +1,14 @@
 {
+	"easycom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/company/company",
+			"style": {
+				"navigationBarTitleText": "公司"
+			}
+		}, {
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -25,12 +33,7 @@
 				"navigationBarTitleText": "需求"
 			}
 		},
-		{
-			"path": "pages/company/company",
-			"style": {
-				"navigationBarTitleText": "公司"
-			}
-		},  {
+		 {
 			"path": "pages/service/service",
 			"style": {
 				"navigationBarTitleText": "服务"
@@ -65,6 +68,24 @@
             "style" : {
 				"navigationBarTitleText": "设置"
 			}
+        }
+        ,{
+            "path" : "pages/platform/companyIntro/companyIntro",
+            "style" : {
+            	"navigationBarTitleText": "平台介绍"
+            }
+        }
+        ,{
+            "path" : "pages/platform/shop/shop",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/platform/need/need",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/platform/visit/visit",
+            "style" : {}
         }
     ],
 	"globalStyle": {

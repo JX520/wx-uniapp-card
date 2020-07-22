@@ -1,4 +1,4 @@
-const commonUrl = "http://127.0.0.1:6000"; //公共路径 
+const commonUrl = "http://127.0.0.1:5000"; //公共路径 
 
 // post请求封装
 function postRequest(url, data) {
