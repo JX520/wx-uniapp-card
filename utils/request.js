@@ -4,11 +4,10 @@ const commonUrl = "http://127.0.0.1:5000"; //公共路径
 function postRequest(url, data) {
     var promise = new Promise((resolve, reject) => {
         var that = this;
-        var postData = data;
         uni.request({
             url: commonUrl + url,
 			// url:url,
-            data: postData,
+            data: data,
             method: "POST",
             header: {
                 "content-type": "application/x-www-form-urlencoded",
@@ -38,11 +37,10 @@ function postRequest(url, data) {
 function getRequest(url, data) {
     var promise = new Promise((resolve, reject) => {
         var that = this;
-        var postData = data;
         uni.request({
             url: commonUrl + url,
 			// url:url,
-            data: postData,
+            data: data,
             method: "GET",
             dataType: "json",
             // header: {

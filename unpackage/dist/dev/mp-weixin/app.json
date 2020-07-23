@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/company/company",
+    "pages/platform/goodsDetail/goodsDetail",
+    "pages/platform/shop/shop",
     "pages/index/index",
     "pages/user/user",
     "pages/room/room",
@@ -12,9 +14,9 @@
     "pages/mylikes/mylikes",
     "pages/set/set",
     "pages/platform/companyIntro/companyIntro",
-    "pages/platform/shop/shop",
     "pages/platform/need/need",
-    "pages/platform/visit/visit"
+    "pages/platform/visit/visit",
+    "pages/user/userCart/userCart"
   ],
   "subPackages": [],
   "window": {

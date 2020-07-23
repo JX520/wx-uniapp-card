@@ -9,6 +9,17 @@
 				"navigationBarTitleText": "公司"
 			}
 		}, {
+		    "path" : "pages/platform/goodsDetail/goodsDetail",
+		    "style" : {
+		    	"navigationBarTitleText": "商品详情"
+		    }
+		},{
+		    "path" : "pages/platform/shop/shop",
+		    "style" : {
+		    	"navigationBarTitleText": "平台商城"
+		    }
+		}
+		,{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -76,16 +87,22 @@
             }
         }
         ,{
-            "path" : "pages/platform/shop/shop",
-            "style" : {}
-        }
-        ,{
             "path" : "pages/platform/need/need",
-            "style" : {}
+            "style" : {
+            	"navigationBarTitleText": "平台需求"
+            }
         }
         ,{
             "path" : "pages/platform/visit/visit",
-            "style" : {}
+            "style" : {
+            	"navigationBarTitleText": "我要拜访"
+            }
+        }
+        ,{
+            "path" : "pages/user/userCart/userCart",
+            "style" : {
+            	"navigationBarTitleText": "购物车"
+            }
         }
     ],
 	"globalStyle": {

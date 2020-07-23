@@ -507,9 +507,6 @@
 		color: #999999;
 	}
 	.intro {
-		/* width: 94%; */
-		/* height: 720rpx; */
-
 		border-radius: 10rpx;
 		background-color: white;
 		margin-top: 20rpx;
@@ -517,18 +514,14 @@
 	}
 
 	.intro-company {
-		width: 95%;
-		/* height: 320rpx; */
 		padding: 10rpx;
 
 	}
 
 	.intro-company-title {
-		/* width: 22%; */
 		height: 50rpx;
 		line-height: 40rpx;
 		border-bottom: 2rpx solid #6495ED;
-		/* 		border-radius: 10rpx; */
 		padding-right: 10rpx;
 
 	}
@@ -589,8 +582,6 @@
 	}
 	
 	.intro-myself {
-		width: 95%;
-		/* height: 340rpx; */
 		padding: 10rpx;
 		position: relative;
 
@@ -598,9 +589,6 @@
 
 	.intro-myself-msg {
 		width: 100%;
-		/* height: 260rpx; */
-		/* 		border: 1rpx solid #007AFF; */
-		/* margin-top: 20rpx; */
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -611,10 +599,7 @@
 	.intro-people {
 		width: 40%;
 		height: 210rpx;
-
-		/* 		margin: 0 auto; */
 		display: flex;
-
 		align-items: center;
 		justify-content: center;
 	}
