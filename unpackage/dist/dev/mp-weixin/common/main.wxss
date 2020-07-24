@@ -7807,6 +7807,17 @@ scroll-view.cu-steps .cu-item {
 	-webkit-flex-direction: column;
 	        flex-direction: column;
 }
+.center{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
 .rowcenter{
 	display: -webkit-box;
 	display: -webkit-flex;

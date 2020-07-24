@@ -27,6 +27,11 @@
 	display: flex;
 	flex-direction: column;
 }
+.center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .rowcenter{
 	display: flex;
 	flex-direction: row;

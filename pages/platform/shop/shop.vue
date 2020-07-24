@@ -42,11 +42,10 @@
 
 <script>
 	import {get} from '@/utils/request.js';
-	import classifyData from "@/utils/shopData.js";
 	export default {
 		data() {
 			return {
-				tabbar: classifyData,
+				tabbar: '',
 				scrollTop: 0, //tab标题的滚动条位置
 				current: 0, // 预设当前项的值
 				menuHeight: 0, // 左边菜单的高度

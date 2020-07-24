@@ -65,8 +65,7 @@
 			};
 		},
 		onLoad(e) {
-			this.gid = parseInt(e.gid);
-			this.getGoods(12);
+			this.getGoods(e.gid);
 		},
 		onPageScroll(e) {
 				this.scrollTop = e.scrollTop;
@@ -75,19 +74,22 @@
 			//获取平台商城商品信息
 			async getGoods(gid){
 				var res = await this.$request.get('/pshop', );
-				// console.log(res.data);
+				var arr = [];
 				this.goods = res.data.result;
 				for(var i in this.goods){
-					this.detail = this.goods[i].goods.find((item)=>{
-						// console.log(item);
-						if(item.gid == 12) return item
+					this.goods[i].goods.find((item)=>{
+						arr.push(item)
 					})
 				}
+				this.detail = arr.find((one)=>{
+					return one['gid'] == gid;
+				})
 				console.log(this.detail)
 			},
+			
 			goCart(){
 				uni.navigateTo({
-					url:'/pages/user/userCart/userCart'
+					url:'/pages/user/cart'
 				})
 			},
 		}

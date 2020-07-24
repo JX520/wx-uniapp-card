@@ -1,6 +1,6 @@
 const commonUrl = "http://127.0.0.1:5000"; //公共路径 
 
-// post请求封装
+// post请求
 function postRequest(url, data) {
     var promise = new Promise((resolve, reject) => {
         var that = this;
@@ -33,7 +33,7 @@ function postRequest(url, data) {
     return promise;
 }
 
-// get请求封装
+// get请求
 function getRequest(url, data) {
     var promise = new Promise((resolve, reject) => {
         var that = this;
