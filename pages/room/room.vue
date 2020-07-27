@@ -9,6 +9,12 @@
 				</view>
 			</block>
 		</view>
+		
+		<!-- 平台动态 -->
+		<view class="platform" v-if="showPlatform">
+			平台动态
+		</view>
+		<!-- 公司动态 -->
 		<view class="company" v-if="showCompany">
 			<block v-for="(item,index) in companyList" :key="index">
 				<view class="cu-card case">
@@ -83,8 +89,10 @@
 				</view>
 			</view>
 		</view>
+		
+		<!-- 个人动态 -->
 		<view class="one" v-if="showOne">
-			哈哈
+			个人动态
 		</view>
 	</view>
 </template>
@@ -94,17 +102,22 @@
 		data() {
 			return {
 				tab: [{
-						name: '公司动态',
+						name: '平台动态',
 						id: 0,
 					},
 					{
-						name: '个人动态',
+						name: '公司动态',
 						id: 1,
+					},
+					{
+						name: '个人动态',
+						id: 2,
 					}
 				],
 				tabid: 0,
+				showPlatform:true,
 				showOne: false,
-				showCompany: true,
+				showCompany: false,
 				nice: "../../static/nice.png",
 				niceActive: "../../static/niceActive.png",
 				companyList: [],
@@ -130,11 +143,17 @@
 				this.tabid = id;
 				// console.log(id);	
 				if (this.tabid == 0) {
-					this.showCompany = true;
+					this.showPlatform = true;
+					this.showCompany = false;
 					this.showOne = false;
 				} else if (this.tabid == 1) {
+					this.showCompany = true;
+					this.showOne = false;
+					this.showPlatform = false;
+				}else if (this.tabid == 2) {
 					this.showCompany = false;
 					this.showOne = true;
+					this.showPlatform = false;
 				}
 			},
 
@@ -232,8 +251,8 @@
 	}
 </script>
 
-<style>
-	.tab_contain {
+<style lang="scss" scoped>
+.tab_contain {
 		width: 100%;
 		height: 70rpx;
 		display: flex;
@@ -244,23 +263,22 @@
 		background-color: white;
 		z-index: 10;
 
-	}
-
 	.tab_one {
-		width: 50%;
+		width: 33%;
 		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		box-sizing: border-box;
-	}
+	
 
-	.tab_one view {
+	view {
 		height: 100%;
 		display: flex;
 		align-items: center;
 		font-size: 30rpx;
 		letter-spacing: 2rpx;
+	}
 	}
 
 	.tab_on {
@@ -268,7 +286,13 @@
 		font-weight: 600;
 		border-bottom: 4rpx solid #6699CC;
 	}
+}
 
+// 平台动态
+.platform{
+	
+}
+	.platform,
 	.company,
 	.one {
 		/* width: 96%; */

@@ -4,6 +4,7 @@
     "u-button": "/uview-ui/components/u-button/u-button",
     "u-divider": "/uview-ui/components/u-divider/u-divider",
     "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-badge": "/uview-ui/components/u-badge/u-badge",
     "u-back-top": "/uview-ui/components/u-back-top/u-back-top"
   }
 }

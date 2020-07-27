@@ -44,21 +44,18 @@
 			</u-checkbox-group>
 		</view>
 		<view class="bottom">
-			<view class="select" @tap='selectAll'>
-				<u-checkbox-group >
-					<u-checkbox
-					shape="circle"
-					v-model="isAll"
-					@change="checkboxChange" 
-					>全选</u-checkbox>
-				</u-checkbox-group >
+			<view class="select" @tap='selAll'>
+				<image  :src="isAll ? '../../static/selectActive.png' : '../../static/select.png'" mode="aspectFit"></image>
+				<text>全选</text>
 			</view>
+			<!-- <image  src="../../static/select.png" mode="aspectFit"></image> -->
+			
 			<view class="pay">
 				<view class="total" >
 					<text v-show="isChange">￥{{allPrice}}.00</text>
 				</view>
 				<u-button type="primary" size="medium" shape="circle"  v-if="isChange">付款</u-button>
-				<u-button type="error" size="medium" shape="circle" v-if="!isChange">删除</u-button>
+				<u-button type="error" size="medium" shape="circle" v-if="!isChange" @click="delGoods">删除</u-button>
 			</view>
 		</view>
 		</view>
@@ -69,6 +66,8 @@
 </template>
 
 <script>
+import {get,post} from '@/utils/request.js'
+// import {mapState, mapMutations, mapActions, mapGetters} from 'vuex'
 import wmNumberBox from "@/components/wm-numberBox/wm-number-box.vue"
 	export default {
 		components:{
@@ -84,40 +83,140 @@ import wmNumberBox from "@/components/wm-numberBox/wm-number-box.vue"
 			};
 		},
 		computed:{
+			// allPrice(){
+			// 	return this.$store.state.allPrice;
+			// }
+		},
+		onLoad() {
 			
 		},
 		onShow() {
+			// uni.clearStorageSync('cart');
 			this.getCart(this.openid);
+			// this.totalPrice();
 		},
 		methods:{
 			// 功能切换
 			set() {
 				this.isChange = !this.isChange;
 			},
+			//购物车商品获取
 			async getCart(openid){
 				if(uni.getStorageSync('cart')){
+					let list = uni.getStorageSync('cart');
+					list.forEach(item=>{
+						item.allprice = 0;
+						item.checked = false;
+					});
+					uni.setStorageSync('cart',list);
 					this.cartList = uni.getStorageSync('cart');
 				}else{
 					var res = await this.$request.get('/cart', {
 						openid:openid
 					});
 					this.cartList = res.data.result;
-					uni.setStorageSync('cart',res.data.result)
+					this.cartList.forEach(item=>{
+						item.allprice = 0;
+						item.checked = false;
+					})
+					uni.setStorageSync('cart',this.cartList)
 				}
+				
 				// console.log(uni.getStorageSync('cart'));
 				
 			},
+			//商品单个选择
 			checkboxChange(e){
+				this.allPrice = 0;
 				this.cartList[e.name].checked = e.value;
+				if(this.cartList[e.name].checked){
+					this.cartList[e.name].allprice = parseInt(this.cartList[e.name].price * this.cartList[e.name].num);
+				}else{
+					this.cartList[e.name].allprice = 0
+				};
 				uni.setStorageSync('cart',this.cartList);
+				// console.log(this.cartList);
+				this.isall();
+				this.totalPrice();
 			},
+			//商品数量加减
 			getNum(e){
+				this.allPrice = 0;
 				this.cartList[e.id].num = e.value;
+				// if(this.cartList[e.id].checked){
+					this.cartList.forEach(item=>{
+						item.allprice = item.price * item.num
+					})
+					// this.cartList[e.id].allprice = parseInt(this.cartList[e.id].price * this.cartList[e.id].num);
+				// }
 				uni.setStorageSync('cart',this.cartList);
+				this.totalPrice();
 			},
+			//总价计算
 			totalPrice(){
-				
-			}
+				this.allPrice = 0;
+				let list =  uni.getStorageSync('cart');
+				list.forEach(item=>{
+					if(item.checked){
+						this.allPrice += item.allprice;
+					}	
+					// this.$store.commit("updatePrice",total)
+				})
+			},
+			
+			//全选
+			selAll(){
+				this.allPrice = 0;
+				this.isAll = !this.isAll;
+				if(this.isAll){
+					this.cartList.forEach(item=>{
+						item.checked = true;
+						this.allPrice += item.price * item.num;
+					})
+				}else{
+					this.cartList.forEach(item=>{
+						item.checked = false;
+					})
+					this.allPrice = 0
+				}
+			},
+			
+			//是否全选
+			isall(){
+				let list =  uni.getStorageSync('cart');
+				let arr = [];
+				list.forEach(item=>{
+					if(item.checked){
+						arr.push(item);
+						if(arr.length == list.length){
+							console.log(arr.length);
+							console.log(list.length);
+							this.isAll = true;
+						}else{
+							this.isAll = false;
+						}
+					}else{
+						if(list.length == 1){
+							this.isAll = false;
+						}
+					}
+				})
+			},
+			
+			//删除
+			delGoods(){
+				if(this.isAll){
+					this.cartList = '';
+					uni.clearStorageSync('cart');	
+				}else{
+					for (let i in this.cartList) {
+						if(this.cartList[i].checked){
+							this.cartList.splice(i,1)
+						}
+						uni.setStorageSync('cart',this.cartList)
+					}
+				}
+			},
 		}
 	}
 </script>
@@ -230,8 +329,14 @@ import wmNumberBox from "@/components/wm-numberBox/wm-number-box.vue"
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		line-height: 50rpx;
 		// border: 1px solid blue;
+		image{
+			width: 38rpx;
+			height: 38rpx;
+		}
 	}
+	
 	.pay{
 		flex: 1;
 		// border: 1px solid #19BE6B;

@@ -35,7 +35,7 @@
 					
 				</view>
 				<view class="item car" @click="goCart()">
-					<!-- <u-badge class="car-num" :count="9" type="error" :offset="[-3, -6]"></u-badge> -->
+					<u-badge class="car-num" :count="cartCount" type="error" :offset="[-3, -6]"></u-badge>
 					<!-- <u-badge class="car-num"  type="error" ></u-badge> -->
 					<u-icon name="shopping-cart" :size="40" :color="$u.color['contentColor']"></u-icon>
 					<view class="text u-line-1" >购物车</view>
@@ -70,6 +70,11 @@
 		onPageScroll(e) {
 				this.scrollTop = e.scrollTop;
 		},
+		computed:{
+			cartCount(){
+				return uni.getStorageSync('cart') ? uni.getStorageSync('cart').length : 0 
+			}
+		},
 		methods:{
 			//获取平台商城商品信息
 			async getGoods(gid){
@@ -86,6 +91,9 @@
 				})
 				console.log(this.detail)
 			},
+			// cartCount(){
+			// 	uni.getStorageSync('cart')
+			// },
 			
 			goCart(){
 				uni.navigateTo({

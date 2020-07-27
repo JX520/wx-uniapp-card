@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"uview-ui/components/u-back-top/u-back-top":1,"uview-ui/components/u-button/u-button":1,"uview-ui/components/u-divider/u-divider":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-checkbox-group/u-checkbox-group":1,"components/wm-numberBox/wm-number-box":1,"uview-ui/components/u-checkbox/u-checkbox":1};
+/******/ 		var cssChunks = {"uview-ui/components/u-back-top/u-back-top":1,"uview-ui/components/u-badge/u-badge":1,"uview-ui/components/u-button/u-button":1,"uview-ui/components/u-divider/u-divider":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-checkbox-group/u-checkbox-group":1,"components/wm-numberBox/wm-number-box":1,"uview-ui/components/u-checkbox/u-checkbox":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"uview-ui/components/u-back-top/u-back-top":"uview-ui/components/u-back-top/u-back-top","uview-ui/components/u-button/u-button":"uview-ui/components/u-button/u-button","uview-ui/components/u-divider/u-divider":"uview-ui/components/u-divider/u-divider","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-checkbox-group/u-checkbox-group":"uview-ui/components/u-checkbox-group/u-checkbox-group","components/wm-numberBox/wm-number-box":"components/wm-numberBox/wm-number-box","uview-ui/components/u-checkbox/u-checkbox":"uview-ui/components/u-checkbox/u-checkbox"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"uview-ui/components/u-back-top/u-back-top":"uview-ui/components/u-back-top/u-back-top","uview-ui/components/u-badge/u-badge":"uview-ui/components/u-badge/u-badge","uview-ui/components/u-button/u-button":"uview-ui/components/u-button/u-button","uview-ui/components/u-divider/u-divider":"uview-ui/components/u-divider/u-divider","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-checkbox-group/u-checkbox-group":"uview-ui/components/u-checkbox-group/u-checkbox-group","components/wm-numberBox/wm-number-box":"components/wm-numberBox/wm-number-box","uview-ui/components/u-checkbox/u-checkbox":"uview-ui/components/u-checkbox/u-checkbox"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

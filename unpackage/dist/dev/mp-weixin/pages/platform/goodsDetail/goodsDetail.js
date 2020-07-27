@@ -103,8 +103,11 @@ var components = {
   "u-icon": function() {
     return __webpack_require__.e(/*! import() | uview-ui/components/u-icon/u-icon */ "uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-icon/u-icon.vue */ 322))
   },
+  "u-badge": function() {
+    return __webpack_require__.e(/*! import() | uview-ui/components/u-badge/u-badge */ "uview-ui/components/u-badge/u-badge").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-badge/u-badge.vue */ 329))
+  },
   "u-back-top": function() {
-    return __webpack_require__.e(/*! import() | uview-ui/components/u-back-top/u-back-top */ "uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-back-top/u-back-top.vue */ 329))
+    return __webpack_require__.e(/*! import() | uview-ui/components/u-back-top/u-back-top */ "uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-back-top/u-back-top.vue */ 336))
   }
 }
 var render = function() {
@@ -216,6 +219,11 @@ var _default =
   onPageScroll: function onPageScroll(e) {
     this.scrollTop = e.scrollTop;
   },
+  computed: {
+    cartCount: function cartCount() {
+      return uni.getStorageSync('cart') ? uni.getStorageSync('cart').length : 0;
+    } },
+
   methods: {
     //获取平台商城商品信息
     getGoods: function getGoods(gid) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res, arr, i;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
@@ -232,6 +240,9 @@ var _default =
                 });
                 console.log(_this.detail);case 8:case "end":return _context.stop();}}}, _callee);}))();
     },
+    // cartCount(){
+    // 	uni.getStorageSync('cart')
+    // },
 
     goCart: function goCart() {
       uni.navigateTo({

@@ -12,6 +12,7 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 9));
 var _request = _interopRequireDefault(__webpack_require__(/*! utils/request.js */ 17));
 var _moment = _interopRequireDefault(__webpack_require__(/*! moment */ 18));
+var _store = _interopRequireDefault(__webpack_require__(/*! ./common/store */ 388));
 
 
 
@@ -24,7 +25,8 @@ _vue.default.prototype.$moment = _moment.default;
 
 _App.default.mpType = 'app';
 
-var app = new _vue.default(_objectSpread({},
+var app = new _vue.default(_objectSpread({
+  store: _store.default },
 _App.default));
 
 createApp(app).$mount();
